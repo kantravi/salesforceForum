@@ -1,0 +1,21 @@
+<apex:page standardController="Opportunity" extensions="showOpptyaddress" sidebar="false" recordSetVar="Opportunities" id="pageid">
+
+
+ <apex:form id="Form">
+             
+            <apex:outputLabel value="Opportunities View: "/>
+              
+              <apex:selectList value="{!oppsList.filterId}" size="1">
+                <apex:actionSupport event="onchange" rerender="Form" />
+                <apex:selectOptions value="{!oppsList.listviewoptions}"/>
+            </apex:selectList>
+            <br/><br/>
+            
+            <apex:outputLabel value="Custom object View: "/>
+            
+            <apex:selectList value="{!customobjectList.filterId}" size="1">
+                <apex:actionSupport event="onchange" rerender="Form" />
+                <apex:selectOptions value="{!customobjectList.listviewoptions}"/>
+            </apex:selectList>
+</apex:form>
+</apex:page>
